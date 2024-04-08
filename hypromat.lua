@@ -230,10 +230,12 @@ function check_for_update()
         file:close()
     end
 
-    if data ~= version then
-        print("\27[93m" .. "Une nouvelle version est disponible" .. "\27[0m")
+    if data == version then
+        print("\27[90m" .. "Version : " .. "\27[92m" .. version .. "\27[0m")
+        
     else
-        print("\27[92m" .. "Vous utilisez la derniere version" .. "\27[0m")
+        print("\27[90m" .. "Version : " .. "\27[91m" .. version .. " => " .. "New release available : " .. data .. "\27[0m")
+        print("\27[93m" .. "Download latest version : https://github.com/galamagda/hypromat/releases/latest" .. "\27[0m")
     end
 end
 
@@ -263,17 +265,19 @@ function main()
     print("\27[93m" .. hypromat1 .. "\27[0m")
     print("\27[91m" .. hypromat2 .. "\27[0m")
     print("\27[31m" .. hypromat3 .. "\27[0m")
-    print("\27[90m" .. "Author : " .. author)
-    print("Version : " .. version)
+    print("\27[90m" .. "Author : " .. author .. "\27[0m")
     check_for_update()
-    print(desc .. "\27[0m")
+    print("\27[90m" .."Github : " .. github .. "\27[0m")
+    
+    print("\27[90m" .. desc .. "\27[0m")
     home()
 end
 
 copyright = ""
 author = "CELL CORE"
 version = "1.0.0"
-desc = "Ce script facilite la lecture et l'ecriture des tags EM4x50."
+github = "https://github.com/galamagda/hypromat"
+desc = "\nCe script facilite la lecture et l'ecriture des tags EM4x50."
 hypromat1 = [[    )                                                 )  
  ( /(   (              (              )        )   ( /(  ]]
 hypromat2 = (
@@ -296,6 +300,8 @@ hypromat3 = (
         |__/  |_|                  
 ]]
 )
+
+
 
 
 

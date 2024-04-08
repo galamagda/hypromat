@@ -4,11 +4,10 @@ import sys
 
 
 def fetch_release_info():
-    url = "https://api.github.com/repos/abouabou/hypromat/releases/latest"
+    url = "https://github.com/galamagda/hypromat/releases/latest"
     try:
         with urllib.request.urlopen(url) as response:
-            data = response.read()
-            return json.loads(data)
+            return response.geturl().split("/v")[-1]
     except Exception as e:
         print("Une erreur s'est produite :", e)
         return None
