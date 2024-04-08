@@ -14,7 +14,7 @@ def fetch_release_info():
 
 
 def fetch_code_site():
-    url = "https://framacarte.org/fr/datalayer/182449/326510/"
+    url = "https://framacarte.org/fr/datalayer/182449/7ecd12c6-0ce7-4808-b1ec-31760f245f42/"
     try:
         with urllib.request.urlopen(url) as response:
             return json.loads(response.read().decode())
